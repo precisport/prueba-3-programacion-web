@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 2: Ingresar Nombres</h1>
+        <form method="POST">
+            <label for="nombre1">Nombre 1:</label>
+            <input type="text" name="nombre1" required>
+
+            <label for="nombre2">Nombre 2:</label>
+            <input type="text" name="nombre2" required>
+
+            <label for="nombre3">Nombre 3:</label>
+            <input type="text" name="nombre3" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+        {% if nombre is not none %}
+            <div class="resultado">
+                <h2>Nombre más largo: {{ nombre }}</h2>
+                <h2>Número de caracteres: {{ longitud }}</h2>
+            </div>
+        {% endif %}
+        <a href="/">Volver</a>
+    </div>
+</body>
+</html>
